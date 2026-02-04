@@ -571,7 +571,7 @@ body {
 }
 
 .highlights-card:hover {
-    background-color: color-mix(in oklab, #ebecec 3%, transparent);
+    background-color: color-mix(in oklab, #ebecec 5%, transparent);
 }
 
 .top {
