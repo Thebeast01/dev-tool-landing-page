@@ -1,0 +1,735 @@
+@font-face {
+    font-family: CursorGothic;
+    src: url('assets/fonts/CursorGothic-Regular.woff2') format('woff2');
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CursorGothic;
+    src: url('assets/fonts/CursorGothic-Italic.woff2') format('woff2');
+    font-display: swap;
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: CursorGothic;
+    src: url('assets/fonts/CursorGothic-Bold.woff2') format('woff2');
+    font-display: swap;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CursorGothic;
+    src: url('assets/fonts/CursorGothic-BoldItalic.woff2') format('woff2');
+    font-display: swap;
+    font-weight: 700;
+    font-style: italic;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "CursorGothic";
+}
+
+:root {
+    --bg-color: #14120B;
+    --font-sm: 0.875rem;
+    --text-md: 1.37rem;
+    --button-padding-sm: 0.4em 0.75em 0.42em;
+    --button-padding-default: .78em 1.35em .8em;
+    --text-color: color-mix(in oklab, #ebecec 80%, transparent);
+    --feature-card-bg-color: #1b1913;
+    --accent-button: #f54e00;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: #fff;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background: var(--bg-color);
+    backdrop-filter: blur(10px);
+}
+
+.nav {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.nav-items {
+    list-style: none;
+    font-size: 0.875rem;
+    font-family: CursorGothic;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-items li {
+    cursor: pointer;
+}
+
+.nav-items li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-items li a:hover {
+
+    color: var(--text-color);
+}
+
+.logo {
+    width: 95.75px;
+}
+
+.download-icon {
+    font-size: 16px;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sign-in {
+    color: #fff;
+    padding: var(--button-padding-sm);
+    border-radius: 50px;
+    font-weight: 400;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: 0.1px solid color-mix(in oklab, #ebecec 20%, transparent);
+    font-size: 0.875rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.sign-in:hover {
+    background-color: color-mix(in oklab, #ebecec 2.5%, transparent);
+}
+
+.download {
+    border: none;
+    outline: none;
+    font-size: 0.875rem;
+    padding: var(--button-padding-sm);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3.40282e38px;
+    background-color: #fff;
+    cursor: pointer;
+
+}
+
+.download:hover {
+    opacity: 0.8;
+}
+
+.main {
+    margin: auto;
+    width: 100%;
+    max-width: 1300px;
+}
+
+.container {
+    width: 100%;
+    margin-top: 8rem;
+
+}
+
+
+.container button {
+    padding: var(--button-padding-default);
+    font-size: 1rem;
+    border-radius: 3.40282e38px;
+    border: none;
+    outline: none;
+    margin-top: 1.5rem;
+}
+
+.container button:hover {
+
+    background-color: #d7d6d5;
+}
+
+.main-content h2 {
+    font-family: CursorGothic;
+    font-weight: 500;
+    font-size: 1.625rem;
+}
+
+.image-container {
+    width: 100%;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: min(780px, 70vh);
+    min-height: 680px;
+    margin: 3rem 0;
+
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+}
+
+.agent {
+    z-index: 20;
+    position: absolute;
+    bottom: 3rem;
+    right: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+
+}
+
+.editor {
+    z-index: 10;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 5rem;
+
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.trusted-by {
+    padding: 3rem 0;
+}
+
+.trusted-by p {
+    text-align: center;
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
+}
+
+.logo-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.company-logo-card {
+    padding: 10px 8px;
+    background-color: #1b1913;
+    height: 6.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: inset 0px .1px .3px color-mix(in oklab, #ebecec 20%, transparent);
+}
+
+.company-logo-card img {
+    object-fit: contain;
+    display: block;
+    width: 6.25rem;
+}
+
+.feature-1 {
+    width: 100%;
+    background-color: color-mix(in oklab, #ebecec 1%, transparent);
+    display: flex;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem 0;
+}
+
+.feature-1:hover {
+    background-color: var(--feature-card-bg-color);
+}
+
+.feature-2 {
+    margin: 4rem 0;
+    width: 100%;
+    background-color: color-mix(in oklab, #ebecec 1%, transparent);
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-2:hover {
+    background-color: var(--feature-card-bg-color);
+}
+
+.feature-img {
+    padding: 1rem;
+    margin-top: 5px;
+}
+
+
+.feature-content {
+    font-size: var(--text-md);
+    font-weight: 400;
+    font-family: CursorGothic;
+    padding: 1.5rem;
+}
+
+.feature-content p span {
+    color: #fff;
+}
+
+.feature-content p {
+    color: color-mix(in oklab, #ebecec 60%, transparent);
+}
+
+.feature-content button {
+    color: var(--accent-button);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: var(--font-sm);
+    margin-top: 1rem;
+
+}
+
+.card-container {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    gap: 0.7rem;
+}
+
+#feature-card-section {
+    margin: 8rem 0;
+}
+
+#feature-card-section h2 {
+    margin: 2rem 0;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2;
+    font-family: CursorGothic;
+    font-weight: 400;
+}
+
+.grid {
+    background-color: var(--feature-card-bg-color);
+    display: grid;
+    border-radius: 4px;
+    border: 1px solid color-mix(in oklab, #ebecec 2.5%, transparent);
+    padding: 2rem 1rem;
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.about-person {
+    margin-top: 6rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-person img {
+    border-radius: 4px;
+}
+
+.info p {
+    font-size: 14px;
+}
+
+.info span {
+    font-size: 12px;
+    color: #848380
+}
+
+.frontier-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1300px;
+}
+
+.frontier-section h2 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: left;
+}
+
+.frontier-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.card-content {
+    width: 100%;
+}
+
+.card-content span {
+    color: #fff;
+}
+
+.card-content p {
+    color: #848380;
+    line-height: 1.5;
+}
+
+.card-content button {
+    color: var(--accent-button);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: var(--font-sm);
+    margin: 1rem 0;
+}
+
+.frontier-card {
+    border: 1px solid color-mix(in oklab, #ebecec 2.5%, transparent);
+    background-color: #1D1C1A;
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+
+}
+
+#changelog-section {
+    margin: 4rem 0;
+    padding: 4rem 0;
+}
+
+#changelog-section h2 {
+    font-size: 1.625rem;
+    font-weight: 400;
+    margin-bottom: 1.3rem;
+}
+
+.changelog-card {
+    background-color: color-mix(in oklab, #ebecec 1%, transparent);
+    border: 1px solid color-mix(in oklab, #ebecec 2.5%, transparent);
+    padding: 1rem;
+
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-items: center;
+}
+
+.changelog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .8rem;
+}
+
+.changelog-card span {
+    border: 2px solid color-mix(in oklab, #ebecec 30%, transparent);
+    padding: 2px 10px;
+    font-size: 14px;
+    border-radius: 50px;
+    color: color-mix(in oklab, #ebecec 60%, transparent)
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: color-mix(in oklab, #ebecec 60%, transparent)
+}
+
+.changelog-card:hover {
+    background-color: var(--feature-card-bg-color);
+}
+
+#changelog-section button {
+    border: none;
+    outline: none;
+    color: var(--accent-button);
+    background-color: transparent;
+    margin-top: calc(1rem * 1.4);
+    font-size: 1rem;
+}
+
+#changelog-section button:hover {
+    color: var(--accent-button);
+    opacity: 0.8;
+}
+
+.join-us {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 2rem 0rem 8rem 0;
+}
+
+
+.img-container img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.text-container h2 {
+    font-weight: 400;
+    font-size: 2.25rem;
+}
+
+.btn-join-us {
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+    border: none;
+    outline: none;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.img-container {
+    border-radius: 4px;
+    overflow: hidden;
+    width: 100%;
+
+}
+
+.recent-highlight-section {
+    background-color: #1b1913;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem;
+}
+
+.content-container {
+    max-width: 1300px;
+    width: 1300px;
+    display: flex;
+    gap: 10rem;
+}
+
+.content-container>p {
+    font-size: 1rem;
+}
+
+.highlights-card {
+    padding: 1rem;
+    background-color: color-mix(in oklab, #ebecec 2%, transparent);
+    border: 1px solid color-mix(in oklab, #ebecec 2.5%, transparent);
+    border-radius: 4px;
+
+
+}
+
+.highlights-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.highlights-container button {
+    border: none;
+    align-self: flex-start;
+    outline: none;
+    color: var(--accent-button);
+    background-color: transparent;
+    margin-top: calc(1rem * 1.4);
+    font-size: 1rem;
+
+}
+
+.highlights-card:hover {
+    background-color: color-mix(in oklab, #ebecec 3%, transparent);
+}
+
+.top {
+    padding: 0 2rem 2rem 0;
+
+    line-height: 1.5rem;
+}
+
+.top span,
+.bottom {
+    color: color-mix(in oklab, #ebecec 60%, transparent)
+}
+
+.try-section {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block-end: calc(1rem * 1.4 *6);
+    padding-block-start: calc(1rem * 1.4 *6);
+}
+
+.try-container {
+    max-width: 1300px;
+    width: 1300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+}
+
+.text-lg {
+    font-weight: 400;
+    font-size: 4.5rem;
+}
+
+.download-for-linux {
+    border: 1px solid #ebecec;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: .78em 1.35em .8em;
+    line-height: 1;
+    border-radius: 3.40282e38px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    justify-content: center;
+    gap: 4px;
+}
+
+.footer-list {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    padding: 4rem 0;
+    flex-direction: column;
+    background-color: #1b1913;
+}
+
+.footer-links-container {
+    max-width: 1300px;
+    width: 1300px;
+
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+}
+
+.top-text {
+    color: color-mix(in oklab, #ebecec 40%, transparent) !important;
+}
+
+.footer-grid ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-grid a {
+    text-decoration: none;
+    color: color-mix(in oklab, #ebecec 70%, transparent)
+}
+
+.copy-right-section {
+    width: 100vw;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.copy-right {
+    max-width: 1300px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 1300px;
+    color: color-mix(in oklab, #ebecec 50%, transparent)
+}
+
+footer {
+
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1b1913;
+}
+
+.copy-right-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.theme-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    border-radius: 3.40282e38px;
+    background-color: #26241e;
+    padding: 0 8px;
+}
+
+.theme-button button {
+    background-color: transparent;
+    color: #fff;
+    opacity: .4;
+    outline: none;
+    border: none;
+    padding: 8px 0;
+
+}
+
+.theme-button button:first-child {
+    opacity: 1;
+    padding: 4px 8px;
+    border-radius: 20px;
+    background-color: #3A3933;
+}
+
+.language {
+    display: flex;
+    gap: 10px;
+    background-color: #26241E;
+    padding: 4px 10px;
+    font-size: 0.875rem;
+    align-items: center;
+    border-radius: 3.40282e38px;
+}
+
+.down-arrow {
+    font-feature-settings: "ss09";
+}
